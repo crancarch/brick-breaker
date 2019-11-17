@@ -1,0 +1,77 @@
+body
+{
+	font-family:Tahoma, Geneva, sans-serif;
+	color: white;
+	background:url(loginbackground.jpg);
+	background-size:cover;
+}
+.signin
+{
+	background: rgba(44,62,80,0.7);
+	padding:40px;
+	width:250px;
+	margin:auto;
+	margin-top:120px;
+	height:400px;
+	
+	
+}
+form
+{
+	width:240px;
+	text-align:center;
+}
+input
+{
+	width:240px;
+	text-align:center;
+	background:transparent;
+	border:none;
+	border-bottom: 1px solid white;
+	font-family: 'Play', sans-serif;
+	font-size:16px;
+	font-weight:200px;
+	padding:10px 0;
+	transition:border 0.5s;
+	outline:none;
+	color:white;
+}
+input[type=Submit]
+{
+	border:none;
+	width:190px;
+	background:white;
+	color:black;
+	font-size:16px;
+	line-height:25px;
+	padding:10px 0;
+	border-radius:15px;
+	cursor:pointer;
+}
+input[type=Submit]:hover
+{
+	color:white;
+	background-color:black;
+}
+h2
+{
+	color:white;
+}
+a{
+	color:yellow;
+	text-decoration:none;
+}
+a:hover
+{
+	color:skyblue;
+}
+
+::placeholder
+{
+	color:aliceblue;
+	opacity:0.5;
+}
+
+
+	
+	

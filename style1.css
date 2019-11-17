@@ -1,0 +1,132 @@
+body{
+    background-color: white;
+}
+
+#id{
+	display: inline-block;
+	width: 5%;
+	height: 5%;
+}
+
+
+canvas { 
+    background: #eee; 
+    display: block;
+     margin: 0 auto; 
+     background-image: url("bg3.jpg");
+    }
+
+.Information{
+  display: inline-block;
+  position: absolute;
+  
+  height: 35%;
+  
+  
+  right: 10%;
+  
+}
+
+.fancy {
+
+	
+	font-family: 'PT Sans', sans-serif;
+	font-size: x-large;
+	padding : 1em;
+	position: absolute;
+	
+	right: 5%;
+	
+	box-sizing: border-box;
+  
+
+	background-color: #E4E4D9;
+  
+	
+	background-image: linear-gradient(175deg, rgba(0,0,0,0) 95%, #8da389 95%),
+					  linear-gradient( 85deg, rgba(0,0,0,0) 95%, #8da389 95%),
+					  linear-gradient(175deg, rgba(0,0,0,0) 90%, #b4b07f 90%),
+					  linear-gradient( 85deg, rgba(0,0,0,0) 92%, #b4b07f 92%),
+					  linear-gradient(175deg, rgba(0,0,0,0) 85%, #c5a68e 85%),
+					  linear-gradient( 85deg, rgba(0,0,0,0) 89%, #c5a68e 89%),
+					  linear-gradient(175deg, rgba(0,0,0,0) 80%, #ba9499 80%),
+					  linear-gradient( 85deg, rgba(0,0,0,0) 86%, #ba9499 86%),
+					  linear-gradient(175deg, rgba(0,0,0,0) 75%, #9f8fa4 75%),
+					  linear-gradient( 85deg, rgba(0,0,0,0) 83%, #9f8fa4 83%),
+					  linear-gradient(175deg, rgba(0,0,0,0) 70%, #74a6ae 70%),
+					  linear-gradient( 85deg, rgba(0,0,0,0) 80%, #74a6ae 80%);
+  }
+
+
+
+.myButton {
+	
+	box-shadow: 0px 8px 10px -7px #323c3d;
+	background:linear-gradient(to bottom, #32a5cf 5%, #07a0b8 100%);
+	background-color:#32a5cf;
+	border-radius:21px;
+	border:1px solid #29668f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:20px;
+	font-weight:bold;
+	padding:9px 11px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #0e3d4d;
+	margin-right: 30%;
+	margin-top: 1%;
+	
+
+	
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #07a0b8 5%, #32a5cf 100%);
+	background-color:#07a0b8;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+/* Hover Button */
+
+.dropbtn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	
+  }
+  
+  .dropdown {
+	position: relative;
+	display: inline-block;
+	margin-left: 1%;
+	margin-top: 1;
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}

@@ -3,9 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <title>Gamedev</title>
-    <style>* { padding: 0; margin: 0; } canvas { background: #eee; display: block; margin: 0 auto; }</style>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+   
 </head>
-<body bgcolor="black">  
+<body>  
+
+
+    <div class="dropdown">
+        <button class="dropbtn">Choose Level</button>
+        <div class="dropdown-content">
+          <a href="index5_level1.html">Level 1</a>
+          <a href="index5_level2.html">Level 2</a>
+          <a href="index5_level3.html">Level 3</a>
+        </div>
+      </div>
+
+      <div class="fancy">
+            <p>KEYBOARD CONTROLS</p>
+            <p>Move Right: Right Arrow</p>
+            <p>Move left: Left Arrow</p>
+            <p>Pause: SpaceBar</p>
+            
+        </div>
+  
 
 <canvas id="myCanvas" width="480" height="600"></canvas>
 
@@ -40,10 +61,11 @@
     var pupy = 10;
     var pupw  = 20;
     var puph = 20;
-    var pupSymbol = "~";
+    var pupSymbol = "*";
     var pupColour = "forestgreen";
     var x1;
     var pause = 0;
+    var count=0;
     var tempdx, tempdy, tempPupSpeed; 
     var colourFlag = 0;
     var time, timeDiff, puptime,pupend = 10000;
@@ -153,7 +175,7 @@
                         
                         if(score == brickRowCount*brickColumnCount) {
                             alert("YOU WIN, CONGRATS!");
-                            document.location.reload();
+                            window.location.href="index5_level3.html";
                         }
                         
                     }
@@ -181,7 +203,7 @@
         ctx.beginPath();
         ctx.arc(x, y, ballRadius, 0, Math.PI*2);
         if(colourFlag == 0)
-            ctx.fillStyle = "#0095DD";
+            ctx.fillStyle = "yellow";
         else 
             ctx.fillStyle = "forestgreen";
         ctx.fill();
@@ -189,9 +211,11 @@
     }
     function drawPaddle() {
         ctx.beginPath();
-        ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
+        var clg = ctx.createLinearGradient(paddleX, canvas.height-paddleHeight, paddleX + paddleWidth, canvas.height-paddleHeight + paddleHeight);
+        clg.addColorStop(0, "brown"); 
+        clg.addColorStop(1, "saddlebrown"); 
+        ctx.fillStyle = clg; 
+        ctx.fillRect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
         ctx.closePath();
     }
     function drawBricks() {
@@ -226,8 +250,11 @@
                     else
                     {
                         
-                        ctx.fillStyle = "#0095DD";
-                        ctx.fill();
+                        var clg = ctx.createLinearGradient(brickX, brickY, brickX + brickWidth, brickY + brickHeight);
+                        clg.addColorStop(0, "darkblue"); 
+                        clg.addColorStop(1, "purple"); 
+                        ctx.fillStyle = clg; 
+                        ctx.fillRect(brickX, brickY, brickWidth, brickHeight);
                     }
                     ctx.closePath();
                 }
@@ -236,12 +263,12 @@
     }
     function drawScore() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "white";
         ctx.fillText("Score: "+score, 8, 20);
     }
     function drawLives() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "white";
         ctx.fillText("Lives: "+lives, canvas.width-65, 20);
     }
     function draw() {
@@ -318,7 +345,90 @@
         requestAnimationFrame(draw);
     }
     draw();
+
+    function changeTheme(){
+       while(count<5){
+           if(count==0){
+               document.getElementsByTagName("BODY")[0].style.backgroundColor="#0b0b0d";
+               count++;
+               break;
+           }
+
+           else if(count==1){
+            document.getElementsByTagName("BODY")[0].style.backgroundColor="#414141";
+            count++;
+            break;
+
+           }
+
+           else if(count==2){
+            document.getElementsByTagName("BODY")[0].style.backgroundColor="#d2fafb";
+            count++;
+            break;
+
+           }
+
+           else if(count==3){
+            document.getElementsByTagName("BODY")[0].style.backgroundColor="#decdc3";
+            count++;
+            break;
+
+           }
+
+           else{
+            document.getElementsByTagName("BODY")[0].style.backgroundColor="white";
+               count=0;
+               break;
+           }
+
+
+
+
+       }
+
+
+    }
+
+    function changeBg(){
+    while(count<4){
+           if(count==0){
+              document.getElementById("myCanvas").style.backgroundImage='url("bg1.jpg")';
+               count++;
+               break;
+           }
+
+           else if(count==1){
+            document.getElementById("myCanvas").style.backgroundImage='url("bg4.jpg")';
+            count++;
+            break;
+
+           }
+
+           else if(count==2){
+            document.getElementById("myCanvas").style.backgroundImage='url("bg2.jpg")';
+            count++;
+            break;
+
+           }
+
+
+           else{
+            document.getElementById("myCanvas").style.backgroundImage='url("bg3.jpg")';
+               count=0;
+               break;
+           }
+
+
+
+
+       }
+
+
+
+}
 </script>
 
+<a href="#" class="myButton" onclick="changeTheme()">Change Theme</a>
+<a href="#" class="myButton" onclick="changeBg()">Change Board Background</a>
 </body>
 </html>
